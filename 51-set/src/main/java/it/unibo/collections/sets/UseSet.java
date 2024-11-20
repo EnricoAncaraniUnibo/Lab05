@@ -37,26 +37,27 @@ public final class UseSet {
         /*
          * 3) Prints its content
          */
-        System.out.println(tree);
+        System.out.println(tree+"\n");
         /*
          * 4) Removes all those strings whose represented number is divisible by three.
          * Note: the method removeIf(Predicate) is not allowed.
          */
+        Collection<String> ris = new TreeSet<>(tree);
         for (String string : tree) {
             if(Integer.parseInt(string) % 3 == 0) {
-                tree.remove(string);
+                ris.remove(string);
             }
         }
         /*
          * 5) Prints the content of the Set using a for-each construct
          */
-        for (String string : tree) {
-            System.out.println(string + "\n");
+        for (String string : ris) {
+            System.out.print(string + ",");
         }
         /*
          * 6) Verifies whether all the numbers left in the set are even
          */
-        System.out.println(containsOnlyEven(tree));
+        System.out.println(containsOnlyEven(ris));
         }
         
         public static boolean containsOnlyEven(Collection<String> collection) {
